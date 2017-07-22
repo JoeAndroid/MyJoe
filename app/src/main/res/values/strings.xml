@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MyJoe</string>
+    <string name="action_settings">Settings</string>
+    <string name="download">离线下载</string>
+    <string name="play">播放</string>
+    <string name="upload_video_info">视频信息</string>
+    <string name="download_list">离线列表</string>
+    <string name="screensize">画面尺寸</string>
+    <string name="definition">清晰度</string>
+    <string name="subtitle">字幕</string>
+    <string name="speed">倍速</string>
+    <string name="account_info">账户信息</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!--意见反馈-->
+    <string name="string_yijian_fankui">意见反馈</string>
+    <string name="string_fasong">发送</string>
+    <string name="string_yijian_hint">请您在这里填写您对言值的意见，我们将不断改进，感谢支持</string>
+    <string name="string_yijian_lianxi">手机或QQ（选填）</string>
+    <string name="string_xiaotieshi">小贴士&#058;\n\n如果突然不能使用言值，可重启程序或手机试试，你也可以添加言值官方客服QQ号：\n3489798987</string>
+
+    <!--分享-->
+    <string name="umeng_socialize_text_sina_key">新浪微博</string>
+    <string name="umeng_socialize_text_weixin_circle_key">微信朋友圈</string>
+    <string name="umeng_socialize_text_weixin_key">微信好友</string>
+    <string name="string_cancle">取消</string>
+</resources>

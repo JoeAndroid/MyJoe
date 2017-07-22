@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_refresh_vertical_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.module.custom.activity.RefreshVerticalViewPagerActivity">
+
+    <com.example.joe.widget.refreshlayout.RefreshLayout
+            android:id="@+id/myRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.example.joe.widget.ultraviewpager.UltraViewPager
+                android:id="@+id/ultra_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray">
+
+        </com.example.joe.widget.ultraviewpager.UltraViewPager>
+    </com.example.joe.widget.refreshlayout.RefreshLayout>
+
+</RelativeLayout>

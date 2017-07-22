@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<litepal>
+
+    <!-- 数据库名称 -->
+    <dbname value="wangcai_db"></dbname>
+    <!-- 数据库版本 -->
+    <version value="1"></version>
+    <list>
+        <!-- 会员信息表 -->
+        <mapping class="com.example.joe.db.UserInfoDB"></mapping>
+    </list>
+</litepal>

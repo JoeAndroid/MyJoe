@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fb7299</color>
+    <color name="colorPrimaryDark">#b85671</color>
+    <color name="colorAccent">@android:color/black</color>
+
+    <color name="colorOverlay">#50ffffff</color>
+    <color name="colorAccentOverlay">#1400bcd4</color>
+    <color name="colorTransparentBlack">#14000000</color>
+
+    <color name="transparent_background">#00000000</color>
+
+
+    <color name="line_bg">#e6e6e6</color>
+    <color name="window_background">#eaeaea</color>
+
+    <color name="navigation_background_light">#FFF8F8F8</color>
+
+    <color name="white_alpha_0">#ffffff</color>
+    <color name="white_alpha_10">#1affffff</color>
+    <color name="white_alpha_20">#33ffffff</color>
+    <color name="white_alpha_30">#4dffffff</color>
+    <color name="white_alpha_40">#66ffffff</color>
+    <color name="white_alpha_50">#7fffffff</color>
+    <color name="white_alpha_60">#99ffffff</color>
+    <color name="white_alpha_70">#b3ffffff</color>
+    <color name="white_alpha_80">#ccffffff</color>
+
+    <color name="qupai_line_gray_cc">#cccccc</color>
+
+    <color name="qupai_black_opacity_5pct">#0d000000</color>
+    <color name="qupai_black_opacity_10pct">#1a000000</color>
+    <color name="qupai_black_opacity_30pct">#4d000000</color>
+    <color name="qupai_black_opacity_40pct">#66000000</color>
+    <color name="qupai_black_opacity_50pct">#80000000</color>
+    <color name="qupai_black_opacity_70pct">#b3000000</color>
+    <color name="qupai_black_opacity_80pct">#cc000000</color>
+    <color name="qupai_background_trim">#7f333333</color>
+
+    <color name="qupai_translucent_0x7f">#7f7f7f7f</color>
+
+
+    <color name="halftransparent">#66000000</color>
+    <color name="black_transprent_40">#66000000</color>
+
+    <color name="parser_download_btn_normal">#8002d4e1</color>
+    <color name="parser_download_btn_pressed">#02d4e1</color>
+
+    <color name="yellow_button_normal">#ff6d00</color>
+    <color name="yellow_button_pressed">#d86500</color>
+
+    <color name="color_4a4a4a">#4a4a4a</color>
+
+    <color name="color_yijian_hint">#B4B4B4</color>
+    <color name="color_yijian">#4A4A4A</color>
+    <color name="color_yijian_bg">#f5f5f5</color>
+    <color name="color_7a7a7a">#7a7a7a</color>
+</resources>

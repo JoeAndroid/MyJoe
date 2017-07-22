@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/activity_start"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager_first"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+    <RelativeLayout
+            android:id="@+id/linaerLayout_no_first"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/start_bg">
+
+    </RelativeLayout>
+</RelativeLayout>

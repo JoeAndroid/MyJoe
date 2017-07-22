@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <com.example.joe.widget.customview.TimeClock
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"></com.example.joe.widget.customview.TimeClock>
+
+            <com.example.joe.widget.customview.MultiShapeView
+                    android:id="@+id/multiShapeView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:border_color="@android:color/black"
+                    app:border_width="1dp"
+                    app:shape="circle"
+                    app:round_radius="5dp"/>
+
+            <com.example.joe.widget.customview.LoadingView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+            <Button
+                    android:id="@+id/btnCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check"/>
+
+            <Button
+                    android:id="@+id/btnUnCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UnCheck"
+                    />
+        </LinearLayout>
+
+    </ScrollView>
+    <!--   <com.example.joe.widget.customview.PieView
+               android:id="@+id/pieView"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"/>-->
+
+
+</LinearLayout>
