@@ -5,7 +5,6 @@ import android.support.v4.util.ArrayMap;
 import com.example.joe.bean.HomeBean;
 import com.example.joe.bean.JsonBean;
 import com.example.joe.bean.ShareContentBean;
-import com.example.joe.bean.UserInfoBean;
 
 import java.util.List;
 import java.util.Map;
