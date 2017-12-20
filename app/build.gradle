@@ -68,10 +68,10 @@ dependencies {
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.4.1'
     //eventbus
     compile 'org.greenrobot:eventbus:3.0.0'
-
     //修改状态栏颜色
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
-
+    //播放器
+    compile 'cn.jzvd:jiaozivideoplayer:6.2.3'
     // LeakCanary
     debugCompile "com.squareup.leakcanary:leakcanary-android:$LEAKCANARY_VERSION"
     releaseCompile leakCanary
