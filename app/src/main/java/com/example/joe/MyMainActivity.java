@@ -16,6 +16,7 @@ import com.example.joe.ui.base.BasePresenter;
 import com.example.joe.ui.module.custom.CustomViewFragment;
 import com.example.joe.ui.module.home.HomeFragment;
 import com.example.joe.ui.module.mine.OtherFragment;
+import com.example.joe.ui.presenter.HomePresenter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,6 @@
 package com.example.joe.api;
 
+import com.example.joe.utils.LogUtils;
 import com.google.gson.Gson;
 
 import android.text.TextUtils;
@@ -41,6 +42,7 @@ public class BaseObserver<T> implements Observer<JsonBean<T>> {
             JsonBean jsonBean = value;
             if (null != jsonBean) {
                 if (!TextUtils.isEmpty(jsonBean.getCode()) && "0".equals(jsonBean.getCode())) {
+                    LogUtils.i(jsonBean.getData());
                     requestBack.onSuccess(jsonBean.getData());
                 } else {
                     if (!TextUtils.isEmpty(jsonBean.getMsg())) {

@@ -2,6 +2,7 @@ package com.example.joe.api;
 
 import android.support.v4.util.ArrayMap;
 
+import com.example.joe.bean.HomeBean;
 import com.example.joe.bean.JsonBean;
 import com.example.joe.bean.ShareContentBean;
 import com.example.joe.bean.UserInfoBean;
@@ -25,8 +26,8 @@ public interface ApiHomeService {
 
     @Headers("Content-type:application/x-www-form-urlencoded;charset=UTF-8")
     @FormUrlEncoded
-    @POST("")
-    Observable<JsonBean<UserInfoBean>> getHomeDataListServer(@Field("data") String data);
+    @POST("pub/home")
+    Observable<JsonBean<String>> getHomeDataListServer(@Field("data") String data);
 
     @Headers("Content-type:application/x-www-form-urlencoded;charset=UTF-8")
     @FormUrlEncoded

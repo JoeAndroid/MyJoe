@@ -28,7 +28,7 @@ public class ApiRetrofit {
 
     private ApiHomeService homeService;
 
-    private static final String BASE_URL = "http://123.57.238.147:8080/twitter/";
+    private static final String BASE_URL = "http://123.57.0.93:8080/longleg/v1/service/";
 
     private static Gson gson;
 
@@ -68,11 +68,6 @@ public class ApiRetrofit {
                         .build();
             }
         };
-
-
-        OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
-                .cache(cache).build();
         /**
          *可以通过 setLevel 改变日志级别
          共包含四个级别：NONE、BASIC、HEADER、BODY
@@ -80,7 +75,11 @@ public class ApiRetrofit {
          */
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-        client.interceptors().add(logging);
+
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
+                .addInterceptor(logging)
+                .cache(cache).build();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)

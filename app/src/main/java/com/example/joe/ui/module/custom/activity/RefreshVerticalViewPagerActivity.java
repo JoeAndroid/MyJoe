@@ -15,6 +15,9 @@ import com.example.joe.ui.base.BasePresenter;
 import com.example.joe.widget.refreshlayout.OnPullListener;
 import com.example.joe.widget.refreshlayout.RefreshLayout;
 import com.example.joe.widget.ultraviewpager.UltraViewPager;
+import com.example.joe.widget.ultraviewpager.transformer.CustPagerTransformer;
+import com.example.joe.widget.ultraviewpager.transformer.UltraDepthScaleTransformer;
+import com.example.joe.widget.ultraviewpager.transformer.UltraScaleTransformer;
 
 import butterknife.BindView;
 
@@ -28,7 +31,6 @@ public class RefreshVerticalViewPagerActivity extends BaseActivity {
     UltraViewPager ultraViewPager;
 
     private PagerAdapter adapter;
-
 
 
     private Handler handler = new Handler() {
@@ -51,9 +53,15 @@ public class RefreshVerticalViewPagerActivity extends BaseActivity {
     @Override
     public void initData() {
         ultraViewPager.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        ultraViewPager.setScrollMode(UltraViewPager.ScrollMode.VERTICAL);
+        ultraViewPager.setScrollMode(UltraViewPager.ScrollMode.HORIZONTAL);
+        ultraViewPager.setMultiScreen(0.5f);
+        ultraViewPager.setItemRatio(1.0f);
+        ultraViewPager.setOffscreenPageLimit(5);
+        ultraViewPager.setPageTransformer(false, new CustPagerTransformer(ultraViewPager.getViewPager()));
+        ultraViewPager.setAutoMeasureHeight(true);
         adapter = new UltraPagerAdapter(false);
         ultraViewPager.setAdapter(adapter);
+        ultraViewPager.setCurrentItem(2);
     }
 
     @Override

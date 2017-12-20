@@ -1,5 +1,6 @@
 package com.example.joe.ui.base;
 
+import com.example.joe.api.ApiFactory;
 import com.example.joe.api.ApiHomeService;
 import com.example.joe.api.ApiRetrofit;
 
@@ -13,7 +14,7 @@ public abstract class BasePresenter<V> {
 
     protected Reference<V> mViewRef;
 
-    public static final ApiHomeService homeService=new ApiRetrofit().getHomeService();
+    public static final ApiHomeService homeService= ApiFactory.getHomeService();
 
     public void attachView(V view){
         mViewRef = new WeakReference<V>(view);

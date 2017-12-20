@@ -13,8 +13,8 @@ import Decoder.BASE64Encoder;
 
 public class AesUtil {
 
-    static String key = "wangcaiwangwangw";
-    static String iv = "wangcaiwangwangw";
+    static String key = "wzyanzhiappdengn";
+    static String iv = "wzyanzhiappdengn";
 
     static String keyh5 = "yanzhih5yanzhih5";
     static String ivh5 = "yanzhih5yanzhih5";

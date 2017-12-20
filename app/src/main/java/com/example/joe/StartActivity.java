@@ -1,5 +1,6 @@
 package com.example.joe;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
@@ -30,8 +32,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
-public class StartActivity extends BaseActivity implements View.OnClickListener {
+public class StartActivity extends Activity implements View.OnClickListener {
 
 
     private static final int MAIN_CODE = 1;//挑战main请求类型
@@ -67,16 +70,14 @@ public class StartActivity extends BaseActivity implements View.OnClickListener 
     ViewPager firstViewPage;
 
     @Override
-    public void initBundle(Bundle bundle) {
-
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_start);
+        ButterKnife.bind(this);
+        initData();
     }
 
-    @Override
-    public int bindRootView() {
-        return R.layout.activity_start;
-    }
 
-    @Override
     public void initData() {
         // 判断是否是第一次安装该程序
         first = SPUtils.getInstance().getString(Constant.START_ONE, null);
@@ -110,12 +111,6 @@ public class StartActivity extends BaseActivity implements View.OnClickListener 
                 handler.sendEmptyMessageDelayed(MAIN_CODE, 3000);//3秒后跳转
             }
         }
-    }
-
-
-    @Override
-    public void addLisenter() {
-
     }
 
     /**
@@ -230,11 +225,6 @@ public class StartActivity extends BaseActivity implements View.OnClickListener 
             startMainActivity();
             return;
         }
-    }
-
-    @Override
-    protected BasePresenter createPresenter() {
-        return null;
     }
 
     private class GuideViewPagerAdapter extends PagerAdapter {
