@@ -12,6 +12,9 @@ import com.example.joe.bean.JsonBean;
 import com.example.joe.ui.view.HomeView;
 import com.example.joe.ui.base.BasePresenter;
 import com.example.joe.utils.CommonUtils;
+
+import java.util.List;
+
 /**
  * 首页
  * Created by qiaobing on 2017/6/9.
@@ -23,31 +26,31 @@ public class HomePresenter extends BasePresenter<HomeView> {
 
     private JsonBean jsonBean;
 
-    public HomePresenter(Context context){
-        this.context=context;
+    public HomePresenter(Context context) {
+        this.context = context;
     }
 
-    public void getHomeDataList(ArrayMap<String, String> params){
-        homeView=getView();
-        if (homeView!=null){
+    public void getHomeDataList(ArrayMap<String, String> params) {
+        homeView = getView();
+        if (homeView != null) {
             homeService.getHomeDataListServer(CommonUtils.orgParams(params))
                     .compose(RxSchedulers.compose())
-                    .subscribe(new BaseObserver<String>(new RequestCallBack<String>() {
-                                   @Override
-                                   public void onCompleted() {
+                    .subscribe(new BaseObserver<List<HomeBean>>(new RequestCallBack<List<HomeBean>>() {
+                                @Override
+                                public void onCompleted() {
 
-                                   }
+                                }
 
-                                   @Override
-                                   public void onFailure(String message) {
+                                @Override
+                                public void onFailure(String message) {
 
-                                   }
+                                }
 
-                                   @Override
-                                   public void onSuccess(String value) {
-                                       homeView.getDataListSuccess();
-                                   }
-                               })
+                                @Override
+                                public void onSuccess(List<HomeBean> value) {
+                                    homeView.getDataListSuccess();
+                                }
+                            })
 
                     );
         }

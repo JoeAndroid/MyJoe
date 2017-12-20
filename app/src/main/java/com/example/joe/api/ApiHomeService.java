@@ -7,6 +7,7 @@ import com.example.joe.bean.JsonBean;
 import com.example.joe.bean.ShareContentBean;
 import com.example.joe.bean.UserInfoBean;
 
+import java.util.List;
 import java.util.Map;
 
 import io.reactivex.Observable;
@@ -27,7 +28,7 @@ public interface ApiHomeService {
     @Headers("Content-type:application/x-www-form-urlencoded;charset=UTF-8")
     @FormUrlEncoded
     @POST("pub/home")
-    Observable<JsonBean<String>> getHomeDataListServer(@Field("data") String data);
+    Observable<JsonBean<List<HomeBean>>> getHomeDataListServer(@Field("data") String data);
 
     @Headers("Content-type:application/x-www-form-urlencoded;charset=UTF-8")
     @FormUrlEncoded
