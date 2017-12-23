@@ -17,6 +17,7 @@ import com.example.joe.ui.view.HomeView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.jzvd.JZVideoPlayerStandard;
 
 /**
  * Created by qiaobing on 2017/4/7.
@@ -26,6 +27,8 @@ public class HomeFragment extends BaseFragment<HomeView, HomePresenter> implemen
     @BindView(R.id.btnVideo)
     Button btnVideo;
 
+    @BindView(R.id.videoplayer)
+    JZVideoPlayerStandard videoplayer;
 
     @Override
     public int bindRootView() {
@@ -54,6 +57,9 @@ public class HomeFragment extends BaseFragment<HomeView, HomePresenter> implemen
     @Override
     public void initData() {
         mPresenter.getHomeDataList(new ArrayMap<>());
+        videoplayer.setUp("http://jzvd.nathen.cn/342a5f7ef6124a4a8faf00e738b8bee4/cf6d9db0bd4d41f59d09ea0a81e918fd-5287d2089db37e62345123a1be272f8b.mp4"
+                , JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, "饺子闭眼睛");
+        videoplayer.thumbImageView.setImageURI(Uri.parse("http://p.qpic.cn/videoyun/0/2449_43b6f696980311e59ed467f22794e792_1/640"));
     }
 
 

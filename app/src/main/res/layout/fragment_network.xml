@@ -15,4 +15,9 @@
         android:layout_height="wrap_content"
         android:text="跳转言值视频详情"
         />
+
+    <cn.jzvd.JZVideoPlayerStandard
+        android:id="@+id/videoplayer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
 </LinearLayout>

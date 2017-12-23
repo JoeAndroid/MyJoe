@@ -24,11 +24,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import cn.jzvd.JZVideoPlayer;
 
 public class MyMainActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
-
-    private Unbinder bind;
-
 
     @BindView(R.id.fragment_frame)
     FrameLayout fragment_frame;
@@ -93,13 +91,6 @@ public class MyMainActivity extends BaseActivity implements BottomNavigationBar.
         return null;
     }
 
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        bind.unbind();
-    }
-
     @Override
     public void onTabSelected(int position) {
         lastSelectedPosition = position;
@@ -152,6 +143,19 @@ public class MyMainActivity extends BaseActivity implements BottomNavigationBar.
     @Override
     public void onTabReselected(int position) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (JZVideoPlayer.backPress()) {
+            return;
+        }
+        super.onBackPressed();
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JZVideoPlayer.releaseAllVideos();
     }
 
     private void hidenFragment(FragmentTransaction transaction) {
