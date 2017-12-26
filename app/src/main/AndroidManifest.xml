@@ -283,6 +283,15 @@
             android:value="x13qOPqyarDjrQF1WUkqK8IxGtxU6U9C" />
 
         <activity android:name=".ui.module.home.activity.CustomViewActivity"></activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/__picker_provider_paths"/>
+        </provider>
     </application>
 
 </manifest>

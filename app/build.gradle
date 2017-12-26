@@ -75,6 +75,8 @@ dependencies {
     compile 'cn.jzvd:jiaozivideoplayer:6.2.3'
     //完整版引入
     compile 'com.shuyu:GSYVideoPlayer:2.1.2'
+    //多类型 item
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     // LeakCanary
     debugCompile "com.squareup.leakcanary:leakcanary-android:$LEAKCANARY_VERSION"
     releaseCompile leakCanary
