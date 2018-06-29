@@ -45,6 +45,37 @@
                     android:layout_height="wrap_content"
                     android:text="UnCheck"
                     />
+
+            <com.example.joe.widget.RecordProgressView
+                android:id="@+id/recordProgress"
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:text="开始"/>
+
+            <TextView
+                android:id="@+id/pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:text="暂停"/>
+            <TextView
+                android:id="@+id/reback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:text="回滚"/>
+            <TextView
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:text="删除"/>
         </LinearLayout>
 
     </ScrollView>

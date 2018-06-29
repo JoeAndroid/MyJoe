@@ -22,11 +22,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
+import com.common.utils.utils.DeviceUtils;
+import com.common.utils.utils.SPUtils;
 import com.example.joe.contants.Constant;
-import com.example.joe.ui.base.BaseActivity;
-import com.example.joe.ui.base.BasePresenter;
-import com.example.joe.utils.DeviceUtils;
-import com.example.joe.utils.SPUtils;
 
 import java.util.ArrayList;
 import java.util.List;

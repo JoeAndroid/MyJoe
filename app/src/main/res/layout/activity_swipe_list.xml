@@ -24,7 +24,7 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <com.example.joe.widget.AlignTextView
+    <com.common.utils.view.AlignTextView
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

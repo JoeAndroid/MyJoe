@@ -3,12 +3,13 @@ package com.example.joe.ui.module.custom;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.common.utils.base.BaseFragment;
 import com.example.joe.R;
-import com.example.joe.ui.base.BaseFragment;
-import com.example.joe.ui.base.BasePresenter;
 import com.example.joe.ui.presenter.HomePresenter;
 import com.example.joe.ui.view.HomeView;
+import com.example.joe.widget.RecordProgressView;
 import com.example.joe.widget.customview.MultiShapeView;
 import com.example.joe.widget.customview.PieData;
 
@@ -20,11 +21,22 @@ import butterknife.OnClick;
 /**
  * Created by qiaobing on 2017/4/7.
  */
-public class CustomViewFragment extends BaseFragment<HomeView,HomePresenter> implements View.OnClickListener {
+public class CustomViewFragment extends BaseFragment<HomeView, HomePresenter> implements View.OnClickListener {
     @BindView(R.id.multiShapeView)
     MultiShapeView multiShapeView;
     @BindView(R.id.btnUnCheck)
     Button btnUnCheck;
+    @BindView(R.id.start)
+    TextView start;
+    @BindView(R.id.pause)
+    TextView pause;
+    @BindView(R.id.reback)
+    TextView reback;
+    @BindView(R.id.delete)
+    TextView delete;
+    @BindView(R.id.recordProgress)
+    RecordProgressView recordProgress;
+
 
     private List<PieData> mDatas;
 
@@ -40,7 +52,6 @@ public class CustomViewFragment extends BaseFragment<HomeView,HomePresenter> imp
 
     @Override
     public void addListener() {
-
     }
 
     @Override
@@ -64,8 +75,22 @@ public class CustomViewFragment extends BaseFragment<HomeView,HomePresenter> imp
         return new HomePresenter(this.getContext());
     }
 
-    @OnClick(value = {R.id.btnCheck, R.id.btnUnCheck})
+    @OnClick(value = {R.id.start, R.id.pause, R.id.reback, R.id.delete})
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.start:
+                recordProgress.changeRecordState(RecordProgressView.RecordState.START);
+                break;
+            case R.id.pause:
+                recordProgress.changeRecordState(RecordProgressView.RecordState.PAUSE);
+                break;
+            case R.id.reback:
+                recordProgress.changeRecordState(RecordProgressView.RecordState.ROLLBACK);
+                break;
+            case R.id.delete:
+                recordProgress.changeRecordState(RecordProgressView.RecordState.DELETE);
+                break;
+        }
     }
 }

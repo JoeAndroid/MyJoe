@@ -1,0 +1,29 @@
+<resources>
+
+    <!--pickerview-->
+    <!-- 顶部按钮栏高度 -->
+    <dimen name="pickerview_topbar_height">44dp</dimen>
+    <!-- 顶部按钮padding -->
+    <dimen name="pickerview_topbar_padding">20dp</dimen>
+    <!-- 顶部按钮文字大小 -->
+    <dimen name="pickerview_topbar_btn_textsize">17sp</dimen>
+    <dimen name="pickerview_topbar_title_textsize">18sp</dimen>
+    <!-- 选项文字大小 -->
+    <dimen name="pickerview_textsize">20sp</dimen>
+
+    <!-- 顶部标题栏高度 -->
+    <dimen name="header_height">45dp</dimen>
+
+    <!--popmenu-->
+    <dimen name="popmenu_width">100.0dip</dimen>
+    <dimen name="popmenu_yoff">5.0dip</dimen>
+
+    <!-- 字体大小显示 -->
+    <dimen name="dimen_text_size_normal">15sp</dimen>
+    <dimen name="dimen_text_size_slarge">16sp</dimen>
+    <dimen name="dimen_text_size_large">17sp</dimen>
+    <dimen name="dimen_text_size_xlarge">19sp</dimen>
+    <dimen name="dimen_text_size_ssmall">12sp</dimen>
+    <dimen name="dimen_text_size_lsmall">13sp</dimen>
+    <dimen name="dimen_text_size_small">14sp</dimen>
+</resources>

@@ -1,14 +1,14 @@
 package com.example.joe.widget.popupwindow;
 
-import android.app.Activity;
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
-import com.example.joe.utils.ScreenUtils;
-import com.example.joe.utils.Utils;
+import com.common.utils.utils.ScreenUtils;
+import com.example.joe.R;
 import com.example.joe.widget.MyListView;
 
 /**

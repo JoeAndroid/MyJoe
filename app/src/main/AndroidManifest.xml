@@ -71,9 +71,6 @@
         <activity android:name=".ui.module.custom.activity.BlurActivity" />
         <activity android:name=".ui.module.custom.activity.ListActivity">
         </activity>
-        <activity
-            android:name=".ui.module.custom.activity.SwipeListActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".ui.module.custom.activity.PeriscopeLayoutActivity" />
         <activity android:name=".MyMainActivity">
 

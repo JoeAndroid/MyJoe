@@ -5,11 +5,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.common.utils.base.BaseActivity;
+import com.common.utils.base.BasePresenter;
+import com.common.utils.view.refreshlayout.RefreshLayout;
 import com.example.joe.R;
-import com.example.joe.ui.base.BaseActivity;
-import com.example.joe.ui.base.BasePresenter;
 import com.example.joe.ui.module.custom.adapter.RefreshLayoutAdapter;
-import com.example.joe.widget.refreshlayout.RefreshLayout;
 
 import java.util.ArrayList;
 

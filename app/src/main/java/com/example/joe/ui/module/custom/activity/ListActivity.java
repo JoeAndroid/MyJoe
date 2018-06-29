@@ -9,8 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.joe.R;
-import com.example.joe.ui.module.custom.activity.RefreshVerticalViewPagerActivity;
-import com.example.joe.ui.module.custom.activity.SwipeListActivity;
 
 import java.util.ArrayList;
 import java.util.List;

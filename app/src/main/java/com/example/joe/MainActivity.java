@@ -31,7 +31,6 @@ import android.widget.Toast;
 
 import com.example.joe.ui.module.custom.activity.BlurActivity;
 import com.example.joe.ui.module.custom.activity.PeriscopeLayoutActivity;
-import com.example.joe.ui.module.custom.activity.SwipeListActivity;
 
 import java.util.ArrayList;
 

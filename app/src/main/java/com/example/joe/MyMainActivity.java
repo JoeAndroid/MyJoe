@@ -11,19 +11,16 @@ import android.widget.FrameLayout;
 import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
-import com.example.joe.ui.base.BaseActivity;
-import com.example.joe.ui.base.BasePresenter;
+import com.common.utils.base.BaseActivity;
+import com.common.utils.base.BasePresenter;
 import com.example.joe.ui.module.custom.CustomViewFragment;
 import com.example.joe.ui.module.home.HomeFragment;
 import com.example.joe.ui.module.mine.OtherFragment;
-import com.example.joe.ui.presenter.HomePresenter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import cn.jzvd.JZVideoPlayer;
 
 public class MyMainActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {

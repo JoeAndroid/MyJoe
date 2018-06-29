@@ -4,14 +4,14 @@ package com.example.joe.ui.presenter;
 import android.content.Context;
 import android.support.v4.util.ArrayMap;
 
-import com.example.joe.api.BaseObserver;
-import com.example.joe.api.RequestCallBack;
-import com.example.joe.api.RxSchedulers;
-import com.example.joe.bean.HomeBean;
-import com.example.joe.bean.JsonBean;
+import com.common.utils.api.BaseObserver;
+import com.common.utils.api.RequestCallBack;
+import com.common.utils.api.RxSchedulers;
+import com.common.utils.base.BasePresenter;
+import com.common.utils.bean.HomeBean;
+import com.common.utils.bean.JsonBean;
+import com.common.utils.utils.CommonUtils;
 import com.example.joe.ui.view.HomeView;
-import com.example.joe.ui.base.BasePresenter;
-import com.example.joe.utils.CommonUtils;
 
 import java.util.List;
 

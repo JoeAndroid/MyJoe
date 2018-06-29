@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 26
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
@@ -11,7 +11,8 @@ android {
         renderscriptSupportModeEnabled true
         applicationId "com.example.joe"
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 26
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
     }
@@ -35,42 +36,18 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     final SUPPORT_VERSION = '25.3.1'
-    final LEAKCANARY_VERSION = '1.5';
-
+    final LEAKCANARY_VERSION = '1.5'
     def leakCanary = "com.squareup.leakcanary:leakcanary-android-no-op:$LEAKCANARY_VERSION"
     //模糊View
     compile 'com.eightbitlab:blurview:1.0.4'
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:recyclerview-v7:24.2.0'
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.android.support:design:24.2.0'
     //注解
-    compile 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-    //rxJava rxAndroid
-    compile 'io.reactivex.rxjava2:rxjava:2.0.7'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    //retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.2.0'
-    //Gson converter
-    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
-    //RxJava2 Adapter
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
-    //okhttp
-    compile 'com.squareup.okhttp:okhttp:2.7.2'
-    compile 'com.squareup.okhttp3:okhttp:3.6.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    //分包
-    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     //加载图片
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
     //底部导航
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.4.1'
-    //eventbus
-    compile 'org.greenrobot:eventbus:3.0.0'
-    //修改状态栏颜色
-    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     //播放器
     compile 'cn.jzvd:jiaozivideoplayer:6.2.3'
     //完整版引入
@@ -82,6 +59,7 @@ dependencies {
     releaseCompile leakCanary
     testCompile leakCanary
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation project(':commonutils')
 }
 repositories {
     mavenCentral()

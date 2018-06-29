@@ -8,16 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.common.utils.base.BaseActivity;
+import com.common.utils.base.BasePresenter;
+import com.common.utils.view.refreshlayout.OnPullListener;
+import com.common.utils.view.refreshlayout.RefreshLayout;
+import com.common.utils.view.ultraviewpager.UltraViewPager;
+import com.common.utils.view.ultraviewpager.transformer.CustPagerTransformer;
 import com.example.joe.R;
 import com.example.joe.ui.module.custom.adapter.UltraPagerAdapter;
-import com.example.joe.ui.base.BaseActivity;
-import com.example.joe.ui.base.BasePresenter;
-import com.example.joe.widget.refreshlayout.OnPullListener;
-import com.example.joe.widget.refreshlayout.RefreshLayout;
-import com.example.joe.widget.ultraviewpager.UltraViewPager;
-import com.example.joe.widget.ultraviewpager.transformer.CustPagerTransformer;
-import com.example.joe.widget.ultraviewpager.transformer.UltraDepthScaleTransformer;
-import com.example.joe.widget.ultraviewpager.transformer.UltraScaleTransformer;
 
 import butterknife.BindView;
 
