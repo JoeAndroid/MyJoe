@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/other">
+        <item
+            android:id="@+id/nav_mylike"
+            android:icon="@drawable/ic_action_my_like"
+            android:title="我喜欢的" />
+        <item
+            android:id="@+id/nav_guanyu"
+            android:icon="@drawable/ic_action_about"
+            android:title="关于我们" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@mipmap/icon_logout"
+            android:title="退出登录" />
+    </group>
+</menu>

@@ -2,57 +2,39 @@ package com.example.joe.ui.presenter;
 
 
 import android.content.Context;
-import android.support.v4.util.ArrayMap;
 
-import com.common.utils.api.BaseObserver;
-import com.common.utils.api.RequestCallBack;
-import com.common.utils.api.RxSchedulers;
 import com.common.utils.base.BasePresenter;
-import com.common.utils.bean.HomeBean;
-import com.common.utils.bean.JsonBean;
-import com.common.utils.utils.CommonUtils;
+import com.example.joe.bean.HomeBean;
+import com.example.joe.ui.model.HomeVideoModel;
 import com.example.joe.ui.view.HomeView;
 
-import java.util.List;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * 首页
  * Created by qiaobing on 2017/6/9.
  */
-public class HomePresenter extends BasePresenter<HomeView> {
+public class HomePresenter extends BasePresenter<HomeView> implements HomeVideoModel.RequestHomeCallBackListener {
 
     private Context context;
     private HomeView homeView;
 
-    private JsonBean jsonBean;
+    private HomeVideoModel homeModel;
 
     public HomePresenter(Context context) {
         this.context = context;
+        homeModel = new HomeVideoModel(this);
     }
 
-    public void getHomeDataList(ArrayMap<String, String> params) {
+    public void getHomeDataList(int num) {
         homeView = getView();
-        if (homeView != null) {
-            homeService.getHomeDataListServer(CommonUtils.orgParams(params))
-                    .compose(RxSchedulers.compose())
-                    .subscribe(new BaseObserver<List<HomeBean>>(new RequestCallBack<List<HomeBean>>() {
-                                @Override
-                                public void onCompleted() {
+        homeView.showProgressView();
+        homeModel.getHomeVideoData(num);
+    }
 
-                                }
 
-                                @Override
-                                public void onFailure(String message) {
-
-                                }
-
-                                @Override
-                                public void onSuccess(List<HomeBean> value) {
-                                    homeView.getDataListSuccess();
-                                }
-                            })
-
-                    );
-        }
+    @Override
+    public void getHomeDataSuccess(@Nullable HomeBean value) {
+        homeView.getDataListSuccess(value);
     }
 }

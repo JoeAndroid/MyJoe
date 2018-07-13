@@ -1,27 +1,34 @@
 package com.example.joe.ui.module.custom;
 
 import android.os.Bundle;
+import android.support.v4.util.ArrayMap;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.common.utils.base.BaseFragment;
+import com.common.utils.view.RecordProgressView;
 import com.example.joe.R;
+import com.example.joe.bean.HomeBean;
 import com.example.joe.ui.presenter.HomePresenter;
 import com.example.joe.ui.view.HomeView;
-import com.example.joe.widget.RecordProgressView;
 import com.example.joe.widget.customview.MultiShapeView;
 import com.example.joe.widget.customview.PieData;
+import com.facebook.stetho.common.LogUtil;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by qiaobing on 2017/4/7.
  */
-public class CustomViewFragment extends BaseFragment<HomeView, HomePresenter> implements View.OnClickListener {
+public class CustomViewFragment extends BaseFragment<HomeView, HomePresenter> implements HomeView, View.OnClickListener {
     @BindView(R.id.multiShapeView)
     MultiShapeView multiShapeView;
     @BindView(R.id.btnUnCheck)
@@ -68,6 +75,15 @@ public class CustomViewFragment extends BaseFragment<HomeView, HomePresenter> im
         pieView.setData(mDatas);*/
 
         multiShapeView.setImageResource(R.mipmap.ic_launcher);
+
+        Observable.interval(1, TimeUnit.SECONDS)
+                .observeOn(Schedulers.newThread())
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        LogUtil.i("Rxjava_timer", "----timer----");
+                    }
+                });
     }
 
     @Override
@@ -92,5 +108,10 @@ public class CustomViewFragment extends BaseFragment<HomeView, HomePresenter> im
                 recordProgress.changeRecordState(RecordProgressView.RecordState.DELETE);
                 break;
         }
+    }
+
+    @Override
+    public void getDataListSuccess(HomeBean value) {
+
     }
 }

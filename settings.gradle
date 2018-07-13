@@ -1,1 +1,1 @@
-include ':app', ':commonutils'
+include ':app', ':baseUtilLib', ':basereslib', ':module_common_ui', ':wanandroid'

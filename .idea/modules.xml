@@ -4,7 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyJoe.iml" filepath="$PROJECT_DIR$/MyJoe.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/commonutils/commonutils.iml" filepath="$PROJECT_DIR$/commonutils/commonutils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baseUtilLib/baseUtilLib.iml" filepath="$PROJECT_DIR$/baseUtilLib/baseUtilLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basereslib/basereslib.iml" filepath="$PROJECT_DIR$/basereslib/basereslib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_common_ui/module_common_ui.iml" filepath="$PROJECT_DIR$/module_common_ui/module_common_ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wanandroid/wanandroid.iml" filepath="$PROJECT_DIR$/wanandroid/wanandroid.iml" />
     </modules>
   </component>
 </project>

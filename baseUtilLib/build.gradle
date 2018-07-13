@@ -1,0 +1,106 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'me.tatarka.retrolambda'  //lambda配置
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+kapt {
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //防止编译的时候oom、GC
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api rootProject.ext.dependencies["appcompat_v7"]
+    api rootProject.ext.dependencies["constraint_layout"]
+    api rootProject.ext.dependencies["cardview-v7"]
+    api rootProject.ext.dependencies["recyclerview-v7"]
+    api rootProject.ext.dependencies["support-v4"]
+    api rootProject.ext.dependencies["design"]
+    api rootProject.ext.dependencies["support_annotations"]
+    api rootProject.ext.dependencies["blurview"]
+    //autolayout
+    api rootProject.ext.dependencies["autolayout"]
+    testImplementation rootProject.ext.dependencies["junit"]
+    androidTestImplementation rootProject.ext.dependencies["runner"]
+    androidTestImplementation rootProject.ext.dependencies["espresso_core"]
+    //MultiDex分包方法
+    api rootProject.ext.dependencies["multidex"]
+    //网络
+    api rootProject.ext.dependencies["retrofit2"]
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["adapter-rxjava2"]
+    api rootProject.ext.dependencies["rxjava2:rxandroid"]
+    api rootProject.ext.dependencies["rxjava2"]
+    api rootProject.ext.dependencies["okhttp"]
+    api rootProject.ext.dependencies["logging-interceptor"]
+    //litepal
+    api rootProject.ext.dependencies["greendao"]
+    //黄油刀
+    annotationProcessor rootProject.ext.dependencies["butterknife_compiler"]
+    api rootProject.ext.dependencies["butterknife"]
+    //日志
+    api rootProject.ext.dependencies["logger"]
+    //6.0权限
+    api rootProject.ext.dependencies["permissionsdispatcher"]
+    api rootProject.ext.dependencies["baseRecyclerViewAdapterHelper"]
+    //图片
+    api rootProject.ext.dependencies["glide"]
+    //eventbus 发布/订阅事件总线
+    api rootProject.ext.dependencies["eventbus"]
+    //bugly
+    api rootProject.ext.dependencies["tencent-bugly"]
+    //修改状态栏颜色
+    api 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    //Arouter路由
+    kapt rootProject.ext.dependencies["arouter_compiler"]
+    api rootProject.ext.dependencies["arouter_api"]
+    api rootProject.ext.dependencies["arouter_annotation"]
+    //安卓调试神器-Stetho
+    api rootProject.ext.dependencies["stetho"]
+    api rootProject.ext.dependencies["stetho-okhttp3"]
+
+    implementation "com.android.support:support-vector-drawable:$support_version"
+    implementation "com.just.agentweb:agentweb:$agentweb_version"
+    implementation "com.gyf.barlibrary:barlibrary:$barlibrary_version"
+    implementation "com.hyman:flowlayout-lib:$flowlayout_version"
+    implementation rootProject.ext.dependencies["kotlinx-coroutines"]
+    implementation rootProject.ext.dependencies["kotlin-experimental"]
+    //检测内存泄露
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary_version"
+
+}

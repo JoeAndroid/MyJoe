@@ -41,7 +41,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0://侧滑删除
-                startActivity(new Intent(this, SwipeListActivity.class));
             break;
             case 1://RefreshVerticalViewPager
                 startActivity(new Intent(this, RefreshVerticalViewPagerActivity.class));

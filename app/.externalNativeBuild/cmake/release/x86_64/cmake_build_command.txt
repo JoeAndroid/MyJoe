@@ -1,0 +1,15 @@
+Executable : /Users/qiaobing/Android/android-sdk-macosx/cmake/3.6.4111459/bin/cmake
+arguments : 
+-H/Users/qiaobing/Desktop/MyJoe/app
+-B/Users/qiaobing/Desktop/MyJoe/app/.externalNativeBuild/cmake/release/x86_64
+-DANDROID_ABI=x86_64
+-DANDROID_PLATFORM=android-21
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/qiaobing/Desktop/MyJoe/app/build/intermediates/cmake/release/obj/x86_64
+-DCMAKE_BUILD_TYPE=Release
+-DANDROID_NDK=/Users/qiaobing/Android/android-sdk-macosx/ndk-bundle
+-DCMAKE_CXX_FLAGS=
+-DCMAKE_TOOLCHAIN_FILE=/Users/qiaobing/Android/android-sdk-macosx/ndk-bundle/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/Users/qiaobing/Android/android-sdk-macosx/cmake/3.6.4111459/bin/ninja
+-GAndroid Gradle - Ninja
+jvmArgs : 
+

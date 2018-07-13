@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -21,9 +22,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import cn.jzvd.JZVideoPlayer;
 
 public class MyMainActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
+
+    static {
+        System.loadLibrary("native-lib");
+    }
 
     @BindView(R.id.fragment_frame)
     FrameLayout fragment_frame;
@@ -39,7 +46,9 @@ public class MyMainActivity extends BaseActivity implements BottomNavigationBar.
 
     private OtherFragment otherFragment;
 
-    private List<Fragment> fragmentList=new ArrayList<>();
+    private List<Fragment> fragmentList = new ArrayList<>();
+
+    private int a = 0;
 
     @Override
     public void initBundle(Bundle bundle) {
@@ -50,6 +59,9 @@ public class MyMainActivity extends BaseActivity implements BottomNavigationBar.
     public int bindRootView() {
         return R.layout.activity_my_main;
     }
+
+    public static native int sum(int a, int b);
+
 
     @Override
     public void initData() {
@@ -109,6 +121,7 @@ public class MyMainActivity extends BaseActivity implements BottomNavigationBar.
                 } else {
                     transaction.show(customViewFragmetn);
                 }
+                Toast.makeText(this, sum(a++, 0) + "", 0).show();
                 break;
             case 1:
                 if (homeFragment == null) {
@@ -149,6 +162,7 @@ public class MyMainActivity extends BaseActivity implements BottomNavigationBar.
         }
         super.onBackPressed();
     }
+
     @Override
     protected void onPause() {
         super.onPause();

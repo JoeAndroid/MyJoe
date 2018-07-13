@@ -1,6 +1,5 @@
 package com.example.joe;
 
-import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
@@ -8,12 +7,13 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
+import com.common.utils.base.BaseApplication;
+import com.common.utils.constant.Constant;
 import com.common.utils.utils.CrashUtils;
 import com.common.utils.utils.LogUtils;
 import com.common.utils.utils.SPUtils;
 import com.common.utils.utils.Utils;
 import com.example.joe.bean.LocationBean;
-import com.example.joe.contants.Constant;
 
 import org.greenrobot.eventbus.EventBus;
 import org.litepal.LitePal;
@@ -21,7 +21,7 @@ import org.litepal.LitePal;
 /**
  * Created by qiaobing on 2016/6/1.
  */
-public class MyApp extends Application implements BDLocationListener {
+public class MyApp extends BaseApplication implements BDLocationListener {
 
     //百度获取经纬度和位置信息
     public static LocationClient mLocationClient = null;
@@ -35,7 +35,7 @@ public class MyApp extends Application implements BDLocationListener {
     @Override
     public void onCreate() {
         super.onCreate();
-        mContext=getApplicationContext();
+        mContext = getApplicationContext();
         // 内存泄露检查工具
        /* if (LeakCanary.isInAnalyzerProcess(this)) {
             // This process is dedicated to LeakCanary for heap analysis.

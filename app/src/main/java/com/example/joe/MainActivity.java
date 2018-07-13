@@ -34,8 +34,6 @@ import com.example.joe.ui.module.custom.activity.PeriscopeLayoutActivity;
 
 import java.util.ArrayList;
 
-import eightbitlab.com.blurview.BlurView;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
     /**
      * 水平方向模糊度
@@ -59,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private MainAdapter mainAdapter;
 
     private ArrayList<String> arrayList;
-    private BlurView blurView;
 
 
     @Override
@@ -134,7 +131,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             exitDialog.show();*/
         }
         if (position==2){
-            startActivity(new Intent(MainActivity.this, SwipeListActivity.class));
         }
         if (position==4){
             startActivity(new Intent(MainActivity.this, PeriscopeLayoutActivity.class));
@@ -144,6 +140,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+//        https://github.com/aosp-mirror/platform_frameworks_base
+
+
     }
 
 

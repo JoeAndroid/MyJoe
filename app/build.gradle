@@ -1,25 +1,46 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         renderscriptTargetApi 19
         renderscriptSupportModeEnabled true
         applicationId "com.example.joe"
-        minSdkVersion 16
-        targetSdkVersion 26
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        //MultiDex分包方法
         multiDexEnabled true
-        versionCode 1
-        versionName "1.0"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+
+        //Arouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
         }
     }
 
@@ -34,32 +55,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    final SUPPORT_VERSION = '25.3.1'
-    final LEAKCANARY_VERSION = '1.5'
-    def leakCanary = "com.squareup.leakcanary:leakcanary-android-no-op:$LEAKCANARY_VERSION"
-    //模糊View
-    compile 'com.eightbitlab:blurview:1.0.4'
-    testCompile 'junit:junit:4.12'
-    //注解
-    compile 'com.jakewharton:butterknife:8.5.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-    //加载图片
-    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
-    //底部导航
-    compile 'com.ashokvarma.android:bottom-navigation-bar:1.4.1'
-    //播放器
-    compile 'cn.jzvd:jiaozivideoplayer:6.2.3'
-    //完整版引入
-    compile 'com.shuyu:GSYVideoPlayer:2.1.2'
-    //多类型 item
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-    // LeakCanary
-    debugCompile "com.squareup.leakcanary:leakcanary-android:$LEAKCANARY_VERSION"
-    releaseCompile leakCanary
-    testCompile leakCanary
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation project(':commonutils')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //黄油刀
+    annotationProcessor rootProject.ext.dependencies["butterknife_compiler"]
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation project(':baseUtilLib')
 }
 repositories {
     mavenCentral()

@@ -22,15 +22,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
+import com.common.utils.constant.Constant;
 import com.common.utils.utils.DeviceUtils;
 import com.common.utils.utils.SPUtils;
-import com.example.joe.contants.Constant;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 
 public class StartActivity extends Activity implements View.OnClickListener {
 
